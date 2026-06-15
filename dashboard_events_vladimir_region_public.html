@@ -1,0 +1,1417 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Афиша событий Владимирской области — 15–21 июня 2026</title>
+  <style>
+    :root {
+      --bg: #f5f1e8;
+      --paper: #fffaf1;
+      --paper-2: #f9f4ea;
+      --ink: #213243;
+      --muted: #66737c;
+      --line: rgba(33, 50, 67, .14);
+      --blue: #285875;
+      --green: #5d755e;
+      --terracotta: #b46b4d;
+      --gold: #c39a55;
+      --shadow: 0 18px 45px rgba(31, 43, 55, .11);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 12%, rgba(195, 154, 85, .18), transparent 30%),
+        radial-gradient(circle at 88% 16%, rgba(40, 88, 117, .16), transparent 29%),
+        linear-gradient(135deg, #f8f4ec 0%, var(--bg) 48%, #efe8da 100%);
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(33,50,67,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(33,50,67,.035) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.7), transparent 80%);
+    }
+
+    a { color: inherit; }
+
+    .page {
+      width: min(1220px, calc(100% - 36px));
+      margin: 0 auto;
+      padding: 34px 0 54px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background:
+        linear-gradient(135deg, rgba(255,250,241,.95), rgba(247,240,226,.92)),
+        radial-gradient(circle at right top, rgba(40,88,117,.12), transparent 33%);
+      box-shadow: var(--shadow);
+      padding: 34px;
+    }
+
+    .hero::after {
+      content: "ВЛАДИМИРСКАЯ\AОБЛАСТЬ";
+      white-space: pre;
+      position: absolute;
+      right: -12px;
+      bottom: -20px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(58px, 11vw, 145px);
+      line-height: .78;
+      letter-spacing: -.06em;
+      color: rgba(33, 50, 67, .045);
+      font-weight: 700;
+      z-index: 0;
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 28px;
+      align-items: end;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border: 1px solid rgba(40, 88, 117, .18);
+      border-radius: 999px;
+      color: var(--blue);
+      background: rgba(255,255,255,.42);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--terracotta);
+    }
+
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(38px, 6vw, 78px);
+      line-height: .96;
+      margin: 22px 0 18px;
+      letter-spacing: -.045em;
+      color: #142a3d;
+    }
+
+    .lead {
+      max-width: 720px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .stat {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 18px;
+      background: rgba(255,255,255,.44);
+      backdrop-filter: blur(8px);
+    }
+
+    .stat strong {
+      display: block;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 34px;
+      line-height: 1;
+      color: var(--blue);
+      letter-spacing: -.03em;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 22px;
+      margin-top: 22px;
+      align-items: start;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: rgba(255,250,241,.82);
+      box-shadow: 0 14px 32px rgba(31,43,55,.07);
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 18px;
+      overflow: hidden;
+    }
+
+    .panel__section {
+      padding: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .panel__section:last-child { border-bottom: 0; }
+
+    .section-title {
+      margin: 0 0 12px;
+      font-size: 13px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-weight: 800;
+    }
+
+    .search {
+      position: relative;
+    }
+
+    .search input {
+      width: 100%;
+      border: 1px solid rgba(33,50,67,.16);
+      border-radius: 16px;
+      background: rgba(255,255,255,.68);
+      padding: 14px 14px 14px 42px;
+      color: var(--ink);
+      font-size: 15px;
+      outline: none;
+    }
+
+    .search input:focus {
+      border-color: rgba(40,88,117,.48);
+      box-shadow: 0 0 0 4px rgba(40,88,117,.09);
+    }
+
+    .search span {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      appearance: none;
+      border: 1px solid rgba(33,50,67,.14);
+      background: rgba(255,255,255,.58);
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 9px 11px;
+      cursor: pointer;
+      font-size: 13px;
+      transition: .18s ease;
+    }
+
+    .chip span {
+      margin-left: 5px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .chip:hover {
+      transform: translateY(-1px);
+      border-color: rgba(40,88,117,.35);
+    }
+
+    .chip.active {
+      background: #22384a;
+      color: #fff;
+      border-color: #22384a;
+    }
+
+    .chip.active span { color: rgba(255,255,255,.72); }
+
+    .chip--small {
+      padding: 7px 10px;
+      font-size: 12px;
+    }
+
+    .reset-button {
+      width: 100%;
+      margin-top: 12px;
+      border: 0;
+      border-radius: 14px;
+      background: rgba(180,107,77,.12);
+      color: #85482f;
+      padding: 12px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .bar-row + .bar-row { margin-top: 12px; }
+
+    .bar-row__label {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 13px;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+
+    .bar-row__label b { color: var(--blue); }
+
+    .bar {
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(33,50,67,.08);
+      overflow: hidden;
+    }
+
+    .bar span {
+      display: block;
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--blue), var(--green));
+    }
+
+    .content-panel {
+      padding: 20px;
+    }
+
+    .toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .toolbar h2 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 30px;
+      letter-spacing: -.03em;
+    }
+
+    .toolbar p {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .sort-select {
+      border: 1px solid rgba(33,50,67,.14);
+      background: rgba(255,255,255,.64);
+      border-radius: 14px;
+      padding: 11px 13px;
+      color: var(--ink);
+      outline: none;
+    }
+
+    .day-group {
+      margin-top: 22px;
+    }
+
+    .day-heading {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 12px;
+      font-size: 18px;
+      color: #142a3d;
+    }
+
+    .day-heading::before {
+      content: "";
+      width: 12px;
+      height: 12px;
+      background: var(--terracotta);
+      border-radius: 999px;
+      box-shadow: 0 0 0 6px rgba(180,107,77,.12);
+    }
+
+    .event-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .event-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 270px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 18px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.62), rgba(255,255,255,.32)),
+        var(--paper);
+      box-shadow: 0 12px 28px rgba(31,43,55,.065);
+      transition: .2s ease;
+    }
+
+    .event-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 38px rgba(31,43,55,.1);
+      border-color: rgba(40,88,117,.24);
+    }
+
+    .event-card__topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .event-date {
+      color: var(--terracotta);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+
+    .event-category {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      background: rgba(40,88,117,.09);
+      color: var(--blue);
+      padding: 6px 9px;
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .event-card h3 {
+      margin: 0 0 12px;
+      color: #142a3d;
+      font-size: 21px;
+      line-height: 1.2;
+      letter-spacing: -.02em;
+    }
+
+    .meta-grid {
+      display: grid;
+      gap: 7px;
+      color: #40515e;
+      font-size: 14px;
+      line-height: 1.45;
+      margin-bottom: 12px;
+    }
+
+    .meta-icon {
+      display: inline-block;
+      width: 24px;
+      opacity: .78;
+    }
+
+    .event-card p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      line-height: 1.5;
+      font-size: 14px;
+    }
+
+    .source-link {
+      margin-top: auto;
+      align-self: flex-start;
+      text-decoration: none;
+      border: 1px solid rgba(33,50,67,.15);
+      color: var(--blue);
+      background: rgba(255,255,255,.48);
+      padding: 9px 12px;
+      border-radius: 12px;
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    .empty {
+      display: none;
+      border: 1px dashed rgba(33,50,67,.24);
+      border-radius: 20px;
+      padding: 28px;
+      text-align: center;
+      color: var(--muted);
+      background: rgba(255,255,255,.38);
+    }
+
+    .footer-note {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    @media (max-width: 980px) {
+      .hero__content,
+      .layout {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        position: static;
+      }
+      .event-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .page {
+        width: min(100% - 22px, 1220px);
+        padding-top: 14px;
+      }
+      .hero {
+        padding: 22px;
+      }
+      .stats {
+        grid-template-columns: 1fr;
+      }
+      .toolbar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+      .sort-select {
+        width: 100%;
+      }
+      .event-card {
+        min-height: auto;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+      body::before,
+      .sidebar,
+      .sort-select,
+      .source-link {
+        display: none !important;
+      }
+      .page {
+        width: 100%;
+        padding: 0;
+      }
+      .hero,
+      .panel,
+      .event-card {
+        box-shadow: none;
+      }
+      .layout {
+        display: block;
+      }
+      .event-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="hero__content">
+        <div>
+          <div class="eyebrow">Афиша недели</div>
+          <h1>События Владимирской области</h1>
+          <p class="lead">Сводка культурных, семейных, музейных, спортивных и просветительских событий на 15–21 июня 2026 года.</p>
+        </div>
+        <div class="stats" aria-label="Статистика афиши">
+          <div class="stat"><strong>33</strong><span>события в подборке</span></div>
+          <div class="stat"><strong>8</strong><span>городов и населённых пунктов</span></div>
+          <div class="stat"><strong>13</strong><span>категорий</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="layout">
+      <aside class="sidebar panel" aria-label="Фильтры">
+        <div class="panel__section">
+          <h2 class="section-title">Поиск</h2>
+          <label class="search">
+            <span>⌕</span>
+            <input id="searchInput" type="search" placeholder="Название, город, площадка…" autocomplete="off">
+          </label>
+          <button id="resetButton" class="reset-button">Сбросить фильтры</button>
+        </div>
+
+        <div class="panel__section">
+          <h2 class="section-title">Даты</h2>
+          <div class="chips">
+            <button class="chip active" data-filter-type="date" data-filter-value="all">Все даты <span>33</span></button>
+            <button class="chip" data-filter-type="date" data-filter-value="15 июня, понедельник">15 июня <span>13</span></button><button class="chip" data-filter-type="date" data-filter-value="16 июня, вторник">16 июня <span>4</span></button><button class="chip" data-filter-type="date" data-filter-value="17 июня, среда">17 июня <span>1</span></button><button class="chip" data-filter-type="date" data-filter-value="18 июня, четверг">18 июня <span>3</span></button><button class="chip" data-filter-type="date" data-filter-value="19 июня, пятница">19 июня <span>3</span></button><button class="chip" data-filter-type="date" data-filter-value="20 июня, суббота">20 июня <span>6</span></button><button class="chip" data-filter-type="date" data-filter-value="21 июня, воскресенье">21 июня <span>3</span></button>
+          </div>
+        </div>
+
+        <div class="panel__section">
+          <h2 class="section-title">Категории</h2>
+          <div class="chips">
+            <button class="chip active" data-filter-type="category" data-filter-value="all">Все категории</button>
+            <button class="chip" data-filter-type="category" data-filter-value="Выставка">Выставка <span>6</span></button><button class="chip" data-filter-type="category" data-filter-value="Декоративно-прикладное искусство">Декоративно-прикладное искусство <span>1</span></button><button class="chip" data-filter-type="category" data-filter-value="Детская программа">Детская программа <span>3</span></button><button class="chip" data-filter-type="category" data-filter-value="Детское творчество">Детское творчество <span>1</span></button><button class="chip" data-filter-type="category" data-filter-value="Концерт">Концерт <span>3</span></button><button class="chip" data-filter-type="category" data-filter-value="Мастер-класс">Мастер-класс <span>3</span></button><button class="chip" data-filter-type="category" data-filter-value="Музейная экспозиция">Музейная экспозиция <span>3</span></button><button class="chip" data-filter-type="category" data-filter-value="Музейное событие">Музейное событие <span>1</span></button><button class="chip" data-filter-type="category" data-filter-value="Музыкально-литературная программа">Музыкально-литературная программа <span>1</span></button><button class="chip" data-filter-type="category" data-filter-value="Народные промыслы">Народные промыслы <span>1</span></button><button class="chip" data-filter-type="category" data-filter-value="Просветительская программа">Просветительская программа <span>1</span></button><button class="chip" data-filter-type="category" data-filter-value="Спортивное событие">Спортивное событие <span>3</span></button><button class="chip" data-filter-type="category" data-filter-value="Фестиваль">Фестиваль <span>6</span></button>
+          </div>
+        </div>
+
+        <div class="panel__section">
+          <h2 class="section-title">Города</h2>
+          <div class="chips">
+            <button class="chip chip--small active" data-filter-type="city" data-filter-value="all">Все</button>
+            <button class="chip chip--small" data-filter-type="city" data-filter-value="Владимир">Владимир <span>18</span></button><button class="chip chip--small" data-filter-type="city" data-filter-value="Суздаль">Суздаль <span>5</span></button><button class="chip chip--small" data-filter-type="city" data-filter-value="Ковров">Ковров <span>3</span></button><button class="chip chip--small" data-filter-type="city" data-filter-value="Гусь-Хрустальный">Гусь-Хрустальный <span>2</span></button><button class="chip chip--small" data-filter-type="city" data-filter-value="Вязники">Вязники <span>2</span></button><button class="chip chip--small" data-filter-type="city" data-filter-value="Мстёра">Мстёра <span>1</span></button><button class="chip chip--small" data-filter-type="city" data-filter-value="Муром">Муром <span>1</span></button><button class="chip chip--small" data-filter-type="city" data-filter-value="Порецкое">Порецкое <span>1</span></button>
+          </div>
+        </div>
+
+        <div class="panel__section">
+          <h2 class="section-title">Структура афиши</h2>
+          
+      <div class="bar-row">
+        <div class="bar-row__label"><span>Выставка</span><b>6</b></div>
+        <div class="bar"><span style="width:100%"></span></div>
+      </div>
+    
+      <div class="bar-row">
+        <div class="bar-row__label"><span>Фестиваль</span><b>6</b></div>
+        <div class="bar"><span style="width:100%"></span></div>
+      </div>
+    
+      <div class="bar-row">
+        <div class="bar-row__label"><span>Мастер-класс</span><b>3</b></div>
+        <div class="bar"><span style="width:50%"></span></div>
+      </div>
+    
+      <div class="bar-row">
+        <div class="bar-row__label"><span>Музейная экспозиция</span><b>3</b></div>
+        <div class="bar"><span style="width:50%"></span></div>
+      </div>
+    
+      <div class="bar-row">
+        <div class="bar-row__label"><span>Детская программа</span><b>3</b></div>
+        <div class="bar"><span style="width:50%"></span></div>
+      </div>
+    
+      <div class="bar-row">
+        <div class="bar-row__label"><span>Концерт</span><b>3</b></div>
+        <div class="bar"><span style="width:50%"></span></div>
+      </div>
+    
+      <div class="bar-row">
+        <div class="bar-row__label"><span>Спортивное событие</span><b>3</b></div>
+        <div class="bar"><span style="width:50%"></span></div>
+      </div>
+    
+      <div class="bar-row">
+        <div class="bar-row__label"><span>Декоративно-прикладное искусство</span><b>1</b></div>
+        <div class="bar"><span style="width:17%"></span></div>
+      </div>
+    
+      <div class="bar-row">
+        <div class="bar-row__label"><span>Народные промыслы</span><b>1</b></div>
+        <div class="bar"><span style="width:17%"></span></div>
+      </div>
+    
+      <div class="bar-row">
+        <div class="bar-row__label"><span>Детское творчество</span><b>1</b></div>
+        <div class="bar"><span style="width:17%"></span></div>
+      </div>
+    
+      <div class="bar-row">
+        <div class="bar-row__label"><span>Музейное событие</span><b>1</b></div>
+        <div class="bar"><span style="width:17%"></span></div>
+      </div>
+    
+      <div class="bar-row">
+        <div class="bar-row__label"><span>Просветительская программа</span><b>1</b></div>
+        <div class="bar"><span style="width:17%"></span></div>
+      </div>
+    
+      <div class="bar-row">
+        <div class="bar-row__label"><span>Музыкально-литературная программа</span><b>1</b></div>
+        <div class="bar"><span style="width:17%"></span></div>
+      </div>
+    
+        </div>
+      </aside>
+
+      <section class="content-panel panel">
+        <div class="toolbar">
+          <div>
+            <h2>Все события</h2>
+            <p><span id="visibleCount">33</span> из 33 событий отображается</p>
+          </div>
+          <select id="sortSelect" class="sort-select" aria-label="Сортировка">
+            <option value="date">Сначала по дате</option>
+            <option value="city">Сначала по городу</option>
+            <option value="category">Сначала по категории</option>
+          </select>
+        </div>
+
+        <div id="eventsContainer">
+          
+    <article class="event-card" 
+             data-date="15 июня, понедельник" 
+             data-city="Владимир" 
+             data-category="Выставка" 
+             data-search="выставка «цветовой прорыв» выставка владимир музейный центр «палаты» выставка работ владимирских художников, посвящённая городским и природным мотивам региона. работает в течение всей недели.">
+      <div class="event-card__topline">
+        <span class="event-date">15 июня</span>
+        <span class="event-category">Выставка</span>
+      </div>
+      <h3>Выставка «Цветовой прорыв»</h3>
+      <div class="meta-grid">
+        <div><span class="meta-icon">📍</span><b>Владимир</b>, Музейный центр «Палаты», ул. Большая Московская, 58</div>
+        <div><span class="meta-icon">⏱</span>10:00–18:00</div>
+      </div>
+      <p>Выставка работ владимирских художников, посвящённая городским и природным мотивам региона. Работает в течение всей недели.</p>
+      <a class="source-link" href="https://vladimirculture.ru/events/81600/vystavka-cvetovoi-proryv" target="_blank" rel="noopener">Источник ↗</a>
+    </article>
+    
+    <article class="event-card" 
+             data-date="15 июня, понедельник" 
+             data-city="Владимир" 
+             data-category="Выставка" 
+             data-search="выставка «человек и календарь» выставка владимир музейный центр «палаты» выставка о календарях, счёте времени и разных системах летоисчисления — от аграрного и церковного календаря до гражданского.">
+      <div class="event-card__topline">
+        <span class="event-date">15 июня</span>
+        <span class="event-category">Выставка</span>
+      </div>
+      <h3>Выставка «Человек и календарь»</h3>
+      <div class="meta-grid">
+        <div><span class="meta-icon">📍</span><b>Владимир</b>, Музейный центр «Палаты», ул. Большая Московская, 58</div>
+        <div><span class="meta-icon">⏱</span>10:00–18:00</div>
+      </div>
+      <p>Выставка о календарях, счёте времени и разных системах летоисчисления — от аграрного и церковного календаря до гражданского.</p>
+      <a class="source-link" href="https://vladimirculture.ru/events/82072/vystavka-chelovek-i-kalendar" target="_blank" rel="noopener">Источник ↗</a>
+    </article>
+    
+    <article class="event-card" 
+             data-date="15 июня, понедельник" 
+             data-city="Владимир" 
+             data-category="Выставка" 
+             data-search="выставка «торжество творчества» выставка владимир владимирская областная научная библиотека выставка работ участников александровского клуба художников: портреты, пейзажи, натюрморты и декоративные композиции.">
+      <div class="event-card__topline">
+        <span class="event-date">15 июня</span>
+        <span class="event-category">Выставка</span>
+      </div>
+      <h3>Выставка «Торжество творчества»</h3>
+      <div class="meta-grid">
+        <div><span class="meta-icon">📍</span><b>Владимир</b>, Владимирская областная научная библиотека, ул. Дзержинского, 3</div>
+        <div><span class="meta-icon">⏱</span>10:00–18:00</div>
+      </div>
+      <p>Выставка работ участников александровского клуба художников: портреты, пейзажи, натюрморты и декоративные композиции.</p>
+      <a class="source-link" href="https://vladimirculture.ru/events/87013/vystavka-torzhestvo-tvorchestva" target="_blank" rel="noopener">Источник ↗</a>
+    </article>
+    
+    <article class="event-card" 
+             data-date="15 июня, понедельник" 
+             data-city="Владимир" 
+             data-category="Декоративно-прикладное искусство" 
+             data-search="«лоскутные краски» декоративно-прикладное искусство владимир центр культуры и искусства на соборной выставка лоскутного шитья студии «волшебница» с мотивами владимирской архитектуры, фольклора и сказочных сюжетов.">
+      <div class="event-card__topline">
+        <span class="event-date">15 июня</span>
+        <span class="event-category">Декоративно-прикладное искусство</span>
+      </div>
+      <h3>«Лоскутные краски»</h3>
+      <div class="meta-grid">
+        <div><span class="meta-icon">📍</span><b>Владимир</b>, Центр культуры и искусства на Соборной, ул. Большая Московская, 33/35</div>
+        <div><span class="meta-icon">⏱</span>09:00–19:00</div>
+      </div>
+      <p>Выставка лоскутного шитья студии «Волшебница» с мотивами владимирской архитектуры, фольклора и сказочных сюжетов.</p>
+      <a class="source-link" href="https://vladimirculture.ru/events/87298/loskutnye-kraski" target="_blank" rel="noopener">Источник ↗</a>
+    </article>
+    
+    <article class="event-card" 
+             data-date="15 июня, понедельник" 
+             data-city="Владимир" 
+             data-category="Народные промыслы" 
+             data-search="выставка «истории ткацкого стана» народные промыслы владимир дом народных мастеров персональная выставка андрея анциферова о ручном ткачестве: пояса, скатерти, полотенца, коврики и другие тканые изделия.">
+      <div class="event-card__topline">
+        <span class="event-date">15 июня</span>
+        <span class="event-category">Народные промыслы</span>
+      </div>
+      <h3>Выставка «Истории ткацкого стана»</h3>
+      <div class="meta-grid">
+        <div><span class="meta-icon">📍</span><b>Владимир</b>, Дом народных мастеров, ул. Большая Московская, 22а</div>
+        <div><span class="meta-icon">⏱</span>09:00–17:00</div>
+      </div>
+      <p>Персональная выставка Андрея Анциферова о ручном ткачестве: пояса, скатерти, полотенца, коврики и другие тканые изделия.</p>
+      <a class="source-link" href="https://vladimirculture.ru/events/87272/vystavka-istorii-tkackogo-stana" target="_blank" rel="noopener">Источник ↗</a>
+    </article>
+    
+    <article class="event-card" 
+             data-date="15 июня, понедельник" 
+             data-city="Владимир" 
+             data-category="Детское творчество" 
+             data-search="выставка победителей конкурса «натура и творчество» детское творчество владимир детская художественная школа выставка работ победителей областного конкурса среди детских художественных школ и школ искусств. доступна 15–17 июня.">
+      <div class="event-card__topline">
+        <span class="event-date">15 июня</span>
+        <span class="event-category">Детское творчество</span>
+      </div>
+      <h3>Выставка победителей конкурса «Натура и творчество»</h3>
+      <div class="meta-grid">
+        <div><span class="meta-icon">📍</span><b>Владимир</b>, Детская художественная школа, ул. Большая Московская, 33</div>
+        <div><span class="meta-icon">⏱</span>09:00–18:00</div>
+      </div>
+      <p>Выставка работ победителей областного конкурса среди детских художественных школ и школ искусств. Доступна 15–17 июня.</p>
+      <a class="source-link" href="https://vladimirculture.ru/events/85716/vystavka-rabot-pobeditelei-oblastnogo-konkursa-natura-i-tvorchestvo" target="_blank" rel="noopener">Источник ↗</a>
+    </article>
+    
+    <article class="event-card" 
+             data-date="15 июня, понедельник" 
+             data-city="Владимир" 
+             data-category="Мастер-класс" 
+             data-search="проект «традиционная роспись. владимирская вишня» мастер-класс владимир дом народных мастеров знакомство с орнаментом «владимирская вишня» и декоративной росписью по дереву. требуется предварительная запись.">
+      <div class="event-card__topline">
+        <span class="event-date">15 июня</span>
+        <span class="event-category">Мастер-класс</span>
+      </div>
+      <h3>Проект «Традиционная роспись. Владимирская вишня»</h3>
+      <div class="meta-grid">
+        <div><span class="meta-icon">📍</span><b>Владимир</b>, Дом народных мастеров, ул. Большая Московская, 22а</div>
+        <div><span class="meta-icon">⏱</span>09:00–17:00</div>
+      </div>
+      <p>Знакомство с орнаментом «Владимирская вишня» и декоративной росписью по дереву. Требуется предварительная запись.</p>
+      <a class="source-link" href="https://vladimirculture.ru/events/82280/kulturno-prosvetitelskii-proekt-tradicionnaya-rospis-vladimirskaya-vishnya" target="_blank" rel="noopener">Источник ↗</a>
+    </article>
+    
+    <article class="event-card" 
+             data-date="15 июня, понедельник" 
+             data-city="Владимир" 
+             data-category="Музейное событие" 
+             data-search="выставка «встретимся в палеозое…» музейное событие владимир музей природы выставка древних окаменелостей и палеонтологических образцов. подойдёт для семейного посещения и школьников.">
+      <div class="event-card__topline">
+        <span class="event-date">15 июня</span>
+        <span class="event-category">Музейное событие</span>
+      </div>
+      <h3>Выставка «Встретимся в палеозое…»</h3>
+      <div class="meta-grid">
+        <div><span class="meta-icon">📍</span><b>Владимир</b>, Музей природы, ул. Мира, 19</div>
+        <div><span class="meta-icon">⏱</span>10:00–16:00 / 10:00–17:00</div>
+      </div>
+      <p>Выставка древних окаменелостей и палеонтологических образцов. Подойдёт для семейного посещения и школьников.</p>
+      <a class="source-link" href="https://vladimirculture.ru/events/83941/vystavka-vstretimsya-v-paleozoe" target="_blank" rel="noopener">Источник ↗</a>
+    </article>
+    
+    <article class="event-card" 
+             data-date="15 июня, понедельник" 
+             data-city="Суздаль" 
+             data-category="Музейная экспозиция" 
+             data-search="экспозиция «богородице-рождественский собор» музейная экспозиция суздаль суздальский кремль экспозиция в суздальском кремле, связанная с историей одного из главных памятников древнего суздаля.">
+      <div class="event-card__topline">
+        <span class="event-date">15 июня</span>
+        <span class="event-category">Музейная экспозиция</span>
+      </div>
+      <h3>Экспозиция «Богородице-Рождественский собор»</h3>
+      <div class="meta-grid">
+        <div><span class="meta-icon">📍</span><b>Суздаль</b>, Суздальский кремль, ул. Кремлёвская, 20</div>
+        <div><span class="meta-icon">⏱</span>09:00–19:00</div>
+      </div>
+      <p>Экспозиция в Суздальском кремле, связанная с историей одного из главных памятников древнего Суздаля.</p>
+      <a class="source-link" href="https://vladimirculture.ru/events/35212/ekspoziciya-bogorodice-rozhdestvenskii-sobor" target="_blank" rel="noopener">Источник ↗</a>
+    </article>
+    
+    <article class="event-card" 
+             data-date="15 июня, понедельник" 
+             data-city="Суздаль" 
+             data-category="Выставка" 
+             data-search="выставка «невербалика. язык русской живописи конца xix — начала xx в.» выставка суздаль суздальский кремль выставка русской живописи рубежа xix–xx веков, включая произведения известных мастеров.">
+      <div class="event-card__topline">
+        <span class="event-date">15 июня</span>
+        <span class="event-category">Выставка</span>
+      </div>
+      <h3>Выставка «Невербалика. Язык русской живописи конца XIX — начала XX в.»</h3>
+      <div class="meta-grid">
+        <div><span class="meta-icon">📍</span><b>Суздаль</b>, Суздальский кремль, ул. Кремлёвская, 20</div>
+        <div><span class="meta-icon">⏱</span>10:00–19:00</div>
+      </div>
+      <p>Выставка русской живописи рубежа XIX–XX веков, включая произведения известных мастеров.</p>
+      <a class="source-link" href="https://vladimirculture.ru/events/85625/vystavka-neverbalika-yazyk-russkoi-zhivopisi-konca-xix-nachala-xx-v" target="_blank" rel="noopener">Источник ↗</a>
+    </article>
+    
+    <article class="event-card" 
+             data-date="15 июня, понедельник" 
+             data-city="Владимир" 
+             data-category="Музейная экспозиция" 
+             data-search="экспозиция дмитриевского собора музейная экспозиция владимир дмитриевский собор посещение одного из главных белокаменных памятников владимира.">
+      <div class="event-card__topline">
+        <span class="event-date">15 июня</span>
+        <span class="event-category">Музейная экспозиция</span>
+      </div>
+      <h3>Экспозиция Дмитриевского собора</h3>
+      <div class="meta-grid">
+        <div><span class="meta-icon">📍</span><b>Владимир</b>, Дмитриевский собор, ул. Большая Московская, 60</div>
+        <div><span class="meta-icon">⏱</span>по расписанию площадки</div>
+      </div>
+      <p>Посещение одного из главных белокаменных памятников Владимира.</p>
+      <a class="source-link" href="https://vladimirculture.ru/events/35249/ekspoziciya-dmitrievskogo-sobora" target="_blank" rel="noopener">Источник ↗</a>
+    </article>
+    
+    <article class="event-card" 
+             data-date="15 июня, понедельник" 
+             data-city="Владимир" 
+             data-category="Фестиваль" 
+             data-search="фестиваль-конкурс «владимир — белокаменная столица» фестиваль владимир центральный парк культуры и отдыха открытая творческая мастерская по каменной скульптуре: художники создают работы прямо в городском пространстве. проект проходит с 1 по 25 июня.">
+      <div class="event-card__topline">
+        <span class="event-date">15 июня</span>
+        <span class="event-category">Фестиваль</span>
+      </div>
+      <h3>Фестиваль-конкурс «Владимир — белокаменная столица»</h3>
+      <div class="meta-grid">
+        <div><span class="meta-icon">📍</span><b>Владимир</b>, Центральный парк культуры и отдыха</div>
+        <div><span class="meta-icon">⏱</span>не указано</div>
+      </div>
+      <p>Открытая творческая мастерская по каменной скульптуре: художники создают работы прямо в городском пространстве. Проект проходит с 1 по 25 июня.</p>
+      <a class="source-link" href="https://www.tourism33.ru/" target="_blank" rel="noopener">Источник ↗</a>
+    </article>
+    
+    <article class="event-card" 
+             data-date="15 июня, понедельник" 
+             data-city="Гусь-Хрустальный" 
+             data-category="Музейная экспозиция" 
+             data-search="экспозиция «музей гранёного стакана» музейная экспозиция гусь-хрустальный гусь-хрустальный историко-художественный музей экспозиция, посвящённая истории гранёного стакана и стекольной традиции гусь-хрустального.">
+      <div class="event-card__topline">
+        <span class="event-date">15 июня</span>
+        <span class="event-category">Музейная экспозиция</span>
+      </div>
+      <h3>Экспозиция «Музей гранёного стакана»</h3>
+      <div class="meta-grid">
+        <div><span class="meta-icon">📍</span><b>Гусь-Хрустальный</b>, Гусь-Хрустальный историко-художественный музей, ул. Калинина, 2</div>
+        <div><span class="meta-icon">⏱</span>по расписанию музея</div>
+      </div>
+      <p>Экспозиция, посвящённая истории гранёного стакана и стекольной традиции Гусь-Хрустального.</p>
+      <a class="source-link" href="https://vladimirculture.ru/events/2660/ekspoziciya-muzei-granenogo-stakana" target="_blank" rel="noopener">Источник ↗</a>
+    </article>
+    
+    <article class="event-card" 
+             data-date="16 июня, вторник" 
+             data-city="Владимир" 
+             data-category="Детская программа" 
+             data-search="спектакль «приключения капитана врунгеля» детская программа владимир владимирский областной театр кукол детский спектакль по мотивам морских приключений капитана врунгеля. подойдёт для семейного похода в театр.">
+      <div class="event-card__topline">
+        <span class="event-date">16 июня</span>
+        <span class="event-category">Детская программа</span>
+      </div>
+      <h3>Спектакль «Приключения капитана Врунгеля»</h3>
+      <div class="meta-grid">
+        <div><span class="meta-icon">📍</span><b>Владимир</b>, Владимирский областной театр кукол, ул. Гагарина, 7</div>
+        <div><span class="meta-icon">⏱</span>10:30–11:30</div>
+      </div>
+      <p>Детский спектакль по мотивам морских приключений капитана Врунгеля. Подойдёт для семейного похода в театр.</p>
+      <a class="source-link" href="https://vladimirculture.ru/events/85613/spektakl-priklyucheniya-kapitana-vrungelya" target="_blank" rel="noopener">Источник ↗</a>
+    </article>
+    
+    <article class="event-card" 
+             data-date="16 июня, вторник" 
+             data-city="Владимир" 
+             data-category="Концерт" 
+             data-search="концерт «новая классика» концерт владимир концертный зал имени с. и. танеева камерный струнный оркестр исполнит классические произведения в современной обработке.">
+      <div class="event-card__topline">
+        <span class="event-date">16 июня</span>
+        <span class="event-category">Концерт</span>
+      </div>
+      <h3>Концерт «Новая классика»</h3>
+      <div class="meta-grid">
+        <div><span class="meta-icon">📍</span><b>Владимир</b>, Концертный зал имени С. И. Танеева, проспект Ленина, 1</div>
+        <div><span class="meta-icon">⏱</span>18:30–20:00</div>
+      </div>
+      <p>Камерный струнный оркестр исполнит классические произведения в современной обработке.</p>
+      <a class="source-link" href="https://vladimirculture.ru/events/85181/koncert-novaya-klassika" target="_blank" rel="noopener">Источник ↗</a>
+    </article>
+    
+    <article class="event-card" 
+             data-date="16 июня, вторник" 
+             data-city="Мстёра" 
+             data-category="Выставка" 
+             data-search="выставка «сокровища лиможа» выставка мстёра мстёрский художественный музей выставка лиможской эмали из частной коллекции натальи карпович. в период афиши доступна 16–20 июня.">
+      <div class="event-card__topline">
+        <span class="event-date">16 июня</span>
+        <span class="event-category">Выставка</span>
+      </div>
+      <h3>Выставка «Сокровища Лиможа»</h3>
+      <div class="meta-grid">
+        <div><span class="meta-icon">📍</span><b>Мстёра</b>, Мстёрский художественный музей, пл. Ленина, 3</div>
+        <div><span class="meta-icon">⏱</span>10:00–17:00</div>
+      </div>
+      <p>Выставка лиможской эмали из частной коллекции Натальи Карпович. В период афиши доступна 16–20 июня.</p>
+      <a class="source-link" href="https://vladimirculture.ru/events/87370/vystavka-sokrovisha-limozha" target="_blank" rel="noopener">Источник ↗</a>
+    </article>
+    
+    <article class="event-card" 
+             data-date="16 июня, вторник" 
+             data-city="Ковров" 
+             data-category="Просветительская программа" 
+             data-search="медиапрограмма «народные промыслы владимирской области» просветительская программа ковров центральная городская библиотека имени с. к. никитина библиотечная программа о традиционных промыслах владимирской области.">
+      <div class="event-card__topline">
+        <span class="event-date">16 июня</span>
+        <span class="event-category">Просветительская программа</span>
+      </div>
+      <h3>Медиапрограмма «Народные промыслы Владимирской области»</h3>
+      <div class="meta-grid">
+        <div><span class="meta-icon">📍</span><b>Ковров</b>, Центральная городская библиотека имени С. К. Никитина, ул. Дегтярёва, 18</div>
+        <div><span class="meta-icon">⏱</span>10:30–11:30</div>
+      </div>
+      <p>Библиотечная программа о традиционных промыслах Владимирской области.</p>
+      <a class="source-link" href="https://vladimirculture.ru/events/87669/mediaprogramma-narodnye-promysly-vladimirskoi-oblasti" target="_blank" rel="noopener">Источник ↗</a>
+    </article>
+    
+    <article class="event-card" 
+             data-date="17 июня, среда" 
+             data-city="Владимир" 
+             data-category="Детская программа" 
+             data-search="спектакль «сказка о потерянном времени» детская программа владимир владимирский областной театр кукол постановка по сказке евгения шварца о времени, взрослении и ответственности.">
+      <div class="event-card__topline">
+        <span class="event-date">17 июня</span>
+        <span class="event-category">Детская программа</span>
+      </div>
+      <h3>Спектакль «Сказка о потерянном времени»</h3>
+      <div class="meta-grid">
+        <div><span class="meta-icon">📍</span><b>Владимир</b>, Владимирский областной театр кукол, ул. Гагарина, 7</div>
+        <div><span class="meta-icon">⏱</span>10:30–11:30</div>
+      </div>
+      <p>Постановка по сказке Евгения Шварца о времени, взрослении и ответственности.</p>
+      <a class="source-link" href="https://vladimirculture.ru/events/5103/spektakl-skazka-o-poteryannom-vremeni" target="_blank" rel="noopener">Источник ↗</a>
+    </article>
+    
+    <article class="event-card" 
+             data-date="18 июня, четверг" 
+             data-city="Владимир" 
+             data-category="Концерт" 
+             data-search="концерт «купальская ночь» концерт владимир концертный зал имени с. и. танеева концертная программа владимирской филармонии на летнюю купальскую тему.">
+      <div class="event-card__topline">
+        <span class="event-date">18 июня</span>
+        <span class="event-category">Концерт</span>
+      </div>
+      <h3>Концерт «Купальская ночь»</h3>
+      <div class="meta-grid">
+        <div><span class="meta-icon">📍</span><b>Владимир</b>, Концертный зал имени С. И. Танеева, проспект Ленина, 1</div>
+        <div><span class="meta-icon">⏱</span>18:30–20:00</div>
+      </div>
+      <p>Концертная программа Владимирской филармонии на летнюю купальскую тему.</p>
+      <a class="source-link" href="https://vladimirculture.ru/events/84134/koncert-kupalskaya-noch" target="_blank" rel="noopener">Источник ↗</a>
+    </article>
+    
+    <article class="event-card" 
+             data-date="18 июня, четверг" 
+             data-city="Владимир" 
+             data-category="Выставка" 
+             data-search="выставка «цветные сны» выставка владимир галерея 4–6 выставка живописи сергея кремнёва о летнем владимире; в экспозиции около 30 полотен.">
+      <div class="event-card__topline">
+        <span class="event-date">18 июня</span>
+        <span class="event-category">Выставка</span>
+      </div>
+      <h3>Выставка «Цветные сны»</h3>
+      <div class="meta-grid">
+        <div><span class="meta-icon">📍</span><b>Владимир</b>, Галерея 4–6, ул. Большая Московская, 4–6</div>
+        <div><span class="meta-icon">⏱</span>10:00–19:00</div>
+      </div>
+      <p>Выставка живописи Сергея Кремнёва о летнем Владимире; в экспозиции около 30 полотен.</p>
+      <a class="source-link" href="https://vladimirculture.ru/events/87361/vystavka-cvetnye-sny" target="_blank" rel="noopener">Источник ↗</a>
+    </article>
+    
+    <article class="event-card" 
+             data-date="18 июня, четверг" 
+             data-city="Ковров" 
+             data-category="Детская программа" 
+             data-search="программа «мы помним, мы гордимся!» детская программа ковров модельная центральная детская библиотека имени с. к. никитина программа для детей, приуроченная ко дню памяти и скорби.">
+      <div class="event-card__topline">
+        <span class="event-date">18 июня</span>
+        <span class="event-category">Детская программа</span>
+      </div>
+      <h3>Программа «Мы помним, мы гордимся!»</h3>
+      <div class="meta-grid">
+        <div><span class="meta-icon">📍</span><b>Ковров</b>, Модельная центральная детская библиотека имени С. К. Никитина, ул. Дегтярёва, 18</div>
+        <div><span class="meta-icon">⏱</span>09:45–10:25, 10:40–11:20, 11:30–12:10</div>
+      </div>
+      <p>Программа для детей, приуроченная ко Дню памяти и скорби.</p>
+      <a class="source-link" href="https://vladimirculture.ru/events/86771/programma-my-pomnim-my-gordimsya" target="_blank" rel="noopener">Источник ↗</a>
+    </article>
+    
+    <article class="event-card" 
+             data-date="19 июня, пятница" 
+             data-city="Владимир" 
+             data-category="Фестиваль" 
+             data-search="фестиваль «джазмост» фестиваль владимир концертный зал имени с. и. танеева первый день джазового фестиваля, который проходит во владимире и муроме.">
+      <div class="event-card__topline">
+        <span class="event-date">19 июня</span>
+        <span class="event-category">Фестиваль</span>
+      </div>
+      <h3>Фестиваль «ДжазМост»</h3>
+      <div class="meta-grid">
+        <div><span class="meta-icon">📍</span><b>Владимир</b>, Концертный зал имени С. И. Танеева, проспект Ленина, 1</div>
+        <div><span class="meta-icon">⏱</span>18:00–20:00</div>
+      </div>
+      <p>Первый день джазового фестиваля, который проходит во Владимире и Муроме.</p>
+      <a class="source-link" href="https://vladimirculture.ru/events/62856/festival-dzhazmost" target="_blank" rel="noopener">Источник ↗</a>
+    </article>
+    
+    <article class="event-card" 
+             data-date="19 июня, пятница" 
+             data-city="Суздаль" 
+             data-category="Фестиваль" 
+             data-search="фестиваль духовной музыки «голоса суздаля» фестиваль суздаль спасо-евфимиев монастырь, спасо-преображенский собор концерт ушаковского хора мальчиков и юношей успенского храма в рамках фестиваля духовной музыки.">
+      <div class="event-card__topline">
+        <span class="event-date">19 июня</span>
+        <span class="event-category">Фестиваль</span>
+      </div>
+      <h3>Фестиваль духовной музыки «Голоса Суздаля»</h3>
+      <div class="meta-grid">
+        <div><span class="meta-icon">📍</span><b>Суздаль</b>, Спасо-Евфимиев монастырь, Спасо-Преображенский собор, ул. Ленина, 148А</div>
+        <div><span class="meta-icon">⏱</span>19:00</div>
+      </div>
+      <p>Концерт Ушаковского хора мальчиков и юношей Успенского храма в рамках фестиваля духовной музыки.</p>
+      <a class="source-link" href="https://vladimirculture.ru/events/76125/mezhdunarodnyi-festival-dukhovnoi-muzyki-golosa-suzdalya" target="_blank" rel="noopener">Источник ↗</a>
+    </article>
+    
+    <article class="event-card" 
+             data-date="19 июня, пятница" 
+             data-city="Вязники" 
+             data-category="Мастер-класс" 
+             data-search="«разноцветный попугай» мастер-класс вязники центр культурного развития творческий мастер-класс для детей: участники делают яркую поделку-попугая и знакомятся с декоративно-прикладными техниками.">
+      <div class="event-card__topline">
+        <span class="event-date">19 июня</span>
+        <span class="event-category">Мастер-класс</span>
+      </div>
+      <h3>«Разноцветный попугай»</h3>
+      <div class="meta-grid">
+        <div><span class="meta-icon">📍</span><b>Вязники</b>, Центр культурного развития, ул. Мичуринская, 66</div>
+        <div><span class="meta-icon">⏱</span>11:00–13:00</div>
+      </div>
+      <p>Творческий мастер-класс для детей: участники делают яркую поделку-попугая и знакомятся с декоративно-прикладными техниками.</p>
+      <a class="source-link" href="https://vladimirculture.ru/events/87912/raznocvetnyi-popugai" target="_blank" rel="noopener">Источник ↗</a>
+    </article>
+    
+    <article class="event-card" 
+             data-date="20 июня, суббота" 
+             data-city="Муром" 
+             data-category="Фестиваль" 
+             data-search="фестиваль «джазмост» фестиваль муром площадка на владимирском шоссе второй день фестиваля проходит в муроме. в программе заявлены джазовые ансамбли и проекты российских и зарубежных музыкантов.">
+      <div class="event-card__topline">
+        <span class="event-date">20 июня</span>
+        <span class="event-category">Фестиваль</span>
+      </div>
+      <h3>Фестиваль «ДжазМост»</h3>
+      <div class="meta-grid">
+        <div><span class="meta-icon">📍</span><b>Муром</b>, площадка на Владимирском шоссе</div>
+        <div><span class="meta-icon">⏱</span>18:00–20:00</div>
+      </div>
+      <p>Второй день фестиваля проходит в Муроме. В программе заявлены джазовые ансамбли и проекты российских и зарубежных музыкантов.</p>
+      <a class="source-link" href="https://vladimirculture.ru/events/62856/festival-dzhazmost" target="_blank" rel="noopener">Источник ↗</a>
+    </article>
+    
+    <article class="event-card" 
+             data-date="20 июня, суббота" 
+             data-city="Суздаль" 
+             data-category="Фестиваль" 
+             data-search="фестиваль духовной музыки «голоса суздаля» фестиваль суздаль спасо-евфимиев монастырь, спасо-преображенский собор концерт мужского хора воронежской филармонии в рамках фестиваля духовной музыки.">
+      <div class="event-card__topline">
+        <span class="event-date">20 июня</span>
+        <span class="event-category">Фестиваль</span>
+      </div>
+      <h3>Фестиваль духовной музыки «Голоса Суздаля»</h3>
+      <div class="meta-grid">
+        <div><span class="meta-icon">📍</span><b>Суздаль</b>, Спасо-Евфимиев монастырь, Спасо-Преображенский собор, ул. Ленина, 148А</div>
+        <div><span class="meta-icon">⏱</span>19:00</div>
+      </div>
+      <p>Концерт мужского хора Воронежской филармонии в рамках фестиваля духовной музыки.</p>
+      <a class="source-link" href="https://vladimirculture.ru/events/76125/mezhdunarodnyi-festival-dukhovnoi-muzyki-golosa-suzdalya" target="_blank" rel="noopener">Источник ↗</a>
+    </article>
+    
+    <article class="event-card" 
+             data-date="20 июня, суббота" 
+             data-city="Суздаль" 
+             data-category="Музыкально-литературная программа" 
+             data-search="проект «лето на каменке. суздаль» музыкально-литературная программа суздаль главный туристический комплекс «суздаль» open-air программа на каменке: поэтическая лаборатория «серебряный век русской поэзии», елена фролова и владимирский губернаторский симфонический оркестр.">
+      <div class="event-card__topline">
+        <span class="event-date">20 июня</span>
+        <span class="event-category">Музыкально-литературная программа</span>
+      </div>
+      <h3>Проект «Лето на Каменке. Суздаль»</h3>
+      <div class="meta-grid">
+        <div><span class="meta-icon">📍</span><b>Суздаль</b>, Главный туристический комплекс «Суздаль», ул. Коровники, 45</div>
+        <div><span class="meta-icon">⏱</span>17:00–19:00</div>
+      </div>
+      <p>Open-air программа на Каменке: поэтическая лаборатория «Серебряный век русской поэзии», Елена Фролова и Владимирский губернаторский симфонический оркестр.</p>
+      <a class="source-link" href="https://vladimirculture.ru/events/74324/proekt-leto-na-kamenke-suzdal" target="_blank" rel="noopener">Источник ↗</a>
+    </article>
+    
+    <article class="event-card" 
+             data-date="20 июня, суббота" 
+             data-city="Владимир" 
+             data-category="Спортивное событие" 
+             data-search="фестиваль «богатырская битва» спортивное событие владимир соборная площадь фестиваль отечественных видов спорта, силового экстрима, народных традиций и боевых искусств. также в программе заявлены соревнования по кибатлетике.">
+      <div class="event-card__topline">
+        <span class="event-date">20 июня</span>
+        <span class="event-category">Спортивное событие</span>
+      </div>
+      <h3>Фестиваль «Богатырская битва»</h3>
+      <div class="meta-grid">
+        <div><span class="meta-icon">📍</span><b>Владимир</b>, Соборная площадь</div>
+        <div><span class="meta-icon">⏱</span>11:00–15:00</div>
+      </div>
+      <p>Фестиваль отечественных видов спорта, силового экстрима, народных традиций и боевых искусств. Также в программе заявлены соревнования по кибатлетике.</p>
+      <a class="source-link" href="https://xn--80aa2apehccmd.xn--p1ai/calendar/festival-narodnykh-traditsiy-otechestvennykh-vidov-sporta-i-boevykh-iskusstv-%D1%86bogatyrskaya-bitva/" target="_blank" rel="noopener">Источник ↗</a>
+    </article>
+    
+    <article class="event-card" 
+             data-date="20 июня, суббота" 
+             data-city="Вязники" 
+             data-category="Мастер-класс" 
+             data-search="«городские зарисовки» мастер-класс вязники центр культурного развития пленэр для тех, кто хочет попробовать городские зарисовки и поработать с композицией, цветом и настроением городского пейзажа.">
+      <div class="event-card__topline">
+        <span class="event-date">20 июня</span>
+        <span class="event-category">Мастер-класс</span>
+      </div>
+      <h3>«Городские зарисовки»</h3>
+      <div class="meta-grid">
+        <div><span class="meta-icon">📍</span><b>Вязники</b>, Центр культурного развития, ул. Мичуринская, 66</div>
+        <div><span class="meta-icon">⏱</span>10:00–12:00</div>
+      </div>
+      <p>Пленэр для тех, кто хочет попробовать городские зарисовки и поработать с композицией, цветом и настроением городского пейзажа.</p>
+      <a class="source-link" href="https://vladimirculture.ru/events/87910/gorodskie-zarisovki" target="_blank" rel="noopener">Источник ↗</a>
+    </article>
+    
+    <article class="event-card" 
+             data-date="20 июня, суббота" 
+             data-city="Ковров" 
+             data-category="Концерт" 
+             data-search="концерт «для вас с любовью…» концерт ковров дом культуры имени в. п. ногина сольный концерт ольги егоровой, солистки народного вокального коллектива «мелодия».">
+      <div class="event-card__topline">
+        <span class="event-date">20 июня</span>
+        <span class="event-category">Концерт</span>
+      </div>
+      <h3>Концерт «Для вас с любовью…»</h3>
+      <div class="meta-grid">
+        <div><span class="meta-icon">📍</span><b>Ковров</b>, Дом культуры имени В. П. Ногина, ул. Абельмана, 75</div>
+        <div><span class="meta-icon">⏱</span>16:00–17:40</div>
+      </div>
+      <p>Сольный концерт Ольги Егоровой, солистки народного вокального коллектива «Мелодия».</p>
+      <a class="source-link" href="https://vladimirculture.ru/events/87489/dlya-vas-s-lyubovyu" target="_blank" rel="noopener">Источник ↗</a>
+    </article>
+    
+    <article class="event-card" 
+             data-date="21 июня, воскресенье" 
+             data-city="Порецкое" 
+             data-category="Фестиваль" 
+             data-search="фестиваль духовной музыки «голоса суздаля»: литургия фестиваль порецкое преображенский храм выступление мужского хора воронежской филармонии в рамках фестивальной программы «голоса суздаля».">
+      <div class="event-card__topline">
+        <span class="event-date">21 июня</span>
+        <span class="event-category">Фестиваль</span>
+      </div>
+      <h3>Фестиваль духовной музыки «Голоса Суздаля»: литургия</h3>
+      <div class="meta-grid">
+        <div><span class="meta-icon">📍</span><b>Порецкое</b>, Преображенский храм</div>
+        <div><span class="meta-icon">⏱</span>08:00</div>
+      </div>
+      <p>Выступление мужского хора Воронежской филармонии в рамках фестивальной программы «Голоса Суздаля».</p>
+      <a class="source-link" href="https://vladimirculture.ru/events/76125/mezhdunarodnyi-festival-dukhovnoi-muzyki-golosa-suzdalya" target="_blank" rel="noopener">Источник ↗</a>
+    </article>
+    
+    <article class="event-card" 
+             data-date="21 июня, воскресенье" 
+             data-city="Владимир" 
+             data-category="Спортивное событие" 
+             data-search="первенство владимирской области по лёгкой атлетике спортивное событие владимир спортивный комплекс «торпедо» региональные соревнования по лёгкой атлетике.">
+      <div class="event-card__topline">
+        <span class="event-date">21 июня</span>
+        <span class="event-category">Спортивное событие</span>
+      </div>
+      <h3>Первенство Владимирской области по лёгкой атлетике</h3>
+      <div class="meta-grid">
+        <div><span class="meta-icon">📍</span><b>Владимир</b>, Спортивный комплекс «Торпедо»</div>
+        <div><span class="meta-icon">⏱</span>не указано</div>
+      </div>
+      <p>Региональные соревнования по лёгкой атлетике.</p>
+      <a class="source-link" href="https://33-news.ru/news/bogatyrskaya-bitva-i-lyogkaya-atletika-novaya-sportivnaya-afisha-vladimirskoj-oblasti" target="_blank" rel="noopener">Источник ↗</a>
+    </article>
+    
+    <article class="event-card" 
+             data-date="21 июня, воскресенье" 
+             data-city="Гусь-Хрустальный" 
+             data-category="Спортивное событие" 
+             data-search="чемпионат владимирской области по пляжному волейболу спортивное событие гусь-хрустальный городской пляж областной чемпионат по пляжному волейболу.">
+      <div class="event-card__topline">
+        <span class="event-date">21 июня</span>
+        <span class="event-category">Спортивное событие</span>
+      </div>
+      <h3>Чемпионат Владимирской области по пляжному волейболу</h3>
+      <div class="meta-grid">
+        <div><span class="meta-icon">📍</span><b>Гусь-Хрустальный</b>, городской пляж</div>
+        <div><span class="meta-icon">⏱</span>не указано</div>
+      </div>
+      <p>Областной чемпионат по пляжному волейболу.</p>
+      <a class="source-link" href="https://33-news.ru/news/bogatyrskaya-bitva-i-lyogkaya-atletika-novaya-sportivnaya-afisha-vladimirskoj-oblasti" target="_blank" rel="noopener">Источник ↗</a>
+    </article>
+    
+        </div>
+
+        <div id="emptyState" class="empty">
+          По выбранным фильтрам событий не найдено. Попробуйте изменить дату, город, категорию или поисковый запрос.
+        </div>
+
+        
+      </section>
+    </section>
+  </main>
+
+  <script>
+    const eventsData = [{"date": "15 июня, понедельник", "date_short": "15 июня", "date_sort": "2026-06-15", "title": "Выставка «Цветовой прорыв»", "category": "Выставка", "city": "Владимир", "venue": "Музейный центр «Палаты»", "address": "ул. Большая Московская, 58", "time": "10:00–18:00", "description": "Выставка работ владимирских художников, посвящённая городским и природным мотивам региона. Работает в течение всей недели.", "source": "https://vladimirculture.ru/events/81600/vystavka-cvetovoi-proryv"}, {"date": "15 июня, понедельник", "date_short": "15 июня", "date_sort": "2026-06-15", "title": "Выставка «Человек и календарь»", "category": "Выставка", "city": "Владимир", "venue": "Музейный центр «Палаты»", "address": "ул. Большая Московская, 58", "time": "10:00–18:00", "description": "Выставка о календарях, счёте времени и разных системах летоисчисления — от аграрного и церковного календаря до гражданского.", "source": "https://vladimirculture.ru/events/82072/vystavka-chelovek-i-kalendar"}, {"date": "15 июня, понедельник", "date_short": "15 июня", "date_sort": "2026-06-15", "title": "Выставка «Торжество творчества»", "category": "Выставка", "city": "Владимир", "venue": "Владимирская областная научная библиотека", "address": "ул. Дзержинского, 3", "time": "10:00–18:00", "description": "Выставка работ участников александровского клуба художников: портреты, пейзажи, натюрморты и декоративные композиции.", "source": "https://vladimirculture.ru/events/87013/vystavka-torzhestvo-tvorchestva"}, {"date": "15 июня, понедельник", "date_short": "15 июня", "date_sort": "2026-06-15", "title": "«Лоскутные краски»", "category": "Декоративно-прикладное искусство", "city": "Владимир", "venue": "Центр культуры и искусства на Соборной", "address": "ул. Большая Московская, 33/35", "time": "09:00–19:00", "description": "Выставка лоскутного шитья студии «Волшебница» с мотивами владимирской архитектуры, фольклора и сказочных сюжетов.", "source": "https://vladimirculture.ru/events/87298/loskutnye-kraski"}, {"date": "15 июня, понедельник", "date_short": "15 июня", "date_sort": "2026-06-15", "title": "Выставка «Истории ткацкого стана»", "category": "Народные промыслы", "city": "Владимир", "venue": "Дом народных мастеров", "address": "ул. Большая Московская, 22а", "time": "09:00–17:00", "description": "Персональная выставка Андрея Анциферова о ручном ткачестве: пояса, скатерти, полотенца, коврики и другие тканые изделия.", "source": "https://vladimirculture.ru/events/87272/vystavka-istorii-tkackogo-stana"}, {"date": "15 июня, понедельник", "date_short": "15 июня", "date_sort": "2026-06-15", "title": "Выставка победителей конкурса «Натура и творчество»", "category": "Детское творчество", "city": "Владимир", "venue": "Детская художественная школа", "address": "ул. Большая Московская, 33", "time": "09:00–18:00", "description": "Выставка работ победителей областного конкурса среди детских художественных школ и школ искусств. Доступна 15–17 июня.", "source": "https://vladimirculture.ru/events/85716/vystavka-rabot-pobeditelei-oblastnogo-konkursa-natura-i-tvorchestvo"}, {"date": "15 июня, понедельник", "date_short": "15 июня", "date_sort": "2026-06-15", "title": "Проект «Традиционная роспись. Владимирская вишня»", "category": "Мастер-класс", "city": "Владимир", "venue": "Дом народных мастеров", "address": "ул. Большая Московская, 22а", "time": "09:00–17:00", "description": "Знакомство с орнаментом «Владимирская вишня» и декоративной росписью по дереву. Требуется предварительная запись.", "source": "https://vladimirculture.ru/events/82280/kulturno-prosvetitelskii-proekt-tradicionnaya-rospis-vladimirskaya-vishnya"}, {"date": "15 июня, понедельник", "date_short": "15 июня", "date_sort": "2026-06-15", "title": "Выставка «Встретимся в палеозое…»", "category": "Музейное событие", "city": "Владимир", "venue": "Музей природы", "address": "ул. Мира, 19", "time": "10:00–16:00 / 10:00–17:00", "description": "Выставка древних окаменелостей и палеонтологических образцов. Подойдёт для семейного посещения и школьников.", "source": "https://vladimirculture.ru/events/83941/vystavka-vstretimsya-v-paleozoe"}, {"date": "15 июня, понедельник", "date_short": "15 июня", "date_sort": "2026-06-15", "title": "Экспозиция «Богородице-Рождественский собор»", "category": "Музейная экспозиция", "city": "Суздаль", "venue": "Суздальский кремль", "address": "ул. Кремлёвская, 20", "time": "09:00–19:00", "description": "Экспозиция в Суздальском кремле, связанная с историей одного из главных памятников древнего Суздаля.", "source": "https://vladimirculture.ru/events/35212/ekspoziciya-bogorodice-rozhdestvenskii-sobor"}, {"date": "15 июня, понедельник", "date_short": "15 июня", "date_sort": "2026-06-15", "title": "Выставка «Невербалика. Язык русской живописи конца XIX — начала XX в.»", "category": "Выставка", "city": "Суздаль", "venue": "Суздальский кремль", "address": "ул. Кремлёвская, 20", "time": "10:00–19:00", "description": "Выставка русской живописи рубежа XIX–XX веков, включая произведения известных мастеров.", "source": "https://vladimirculture.ru/events/85625/vystavka-neverbalika-yazyk-russkoi-zhivopisi-konca-xix-nachala-xx-v"}, {"date": "15 июня, понедельник", "date_short": "15 июня", "date_sort": "2026-06-15", "title": "Экспозиция Дмитриевского собора", "category": "Музейная экспозиция", "city": "Владимир", "venue": "Дмитриевский собор", "address": "ул. Большая Московская, 60", "time": "по расписанию площадки", "description": "Посещение одного из главных белокаменных памятников Владимира.", "source": "https://vladimirculture.ru/events/35249/ekspoziciya-dmitrievskogo-sobora"}, {"date": "15 июня, понедельник", "date_short": "15 июня", "date_sort": "2026-06-15", "title": "Фестиваль-конкурс «Владимир — белокаменная столица»", "category": "Фестиваль", "city": "Владимир", "venue": "Центральный парк культуры и отдыха", "address": "", "time": "не указано", "description": "Открытая творческая мастерская по каменной скульптуре: художники создают работы прямо в городском пространстве. Проект проходит с 1 по 25 июня.", "source": "https://www.tourism33.ru/"}, {"date": "15 июня, понедельник", "date_short": "15 июня", "date_sort": "2026-06-15", "title": "Экспозиция «Музей гранёного стакана»", "category": "Музейная экспозиция", "city": "Гусь-Хрустальный", "venue": "Гусь-Хрустальный историко-художественный музей", "address": "ул. Калинина, 2", "time": "по расписанию музея", "description": "Экспозиция, посвящённая истории гранёного стакана и стекольной традиции Гусь-Хрустального.", "source": "https://vladimirculture.ru/events/2660/ekspoziciya-muzei-granenogo-stakana"}, {"date": "16 июня, вторник", "date_short": "16 июня", "date_sort": "2026-06-16", "title": "Спектакль «Приключения капитана Врунгеля»", "category": "Детская программа", "city": "Владимир", "venue": "Владимирский областной театр кукол", "address": "ул. Гагарина, 7", "time": "10:30–11:30", "description": "Детский спектакль по мотивам морских приключений капитана Врунгеля. Подойдёт для семейного похода в театр.", "source": "https://vladimirculture.ru/events/85613/spektakl-priklyucheniya-kapitana-vrungelya"}, {"date": "16 июня, вторник", "date_short": "16 июня", "date_sort": "2026-06-16", "title": "Концерт «Новая классика»", "category": "Концерт", "city": "Владимир", "venue": "Концертный зал имени С. И. Танеева", "address": "проспект Ленина, 1", "time": "18:30–20:00", "description": "Камерный струнный оркестр исполнит классические произведения в современной обработке.", "source": "https://vladimirculture.ru/events/85181/koncert-novaya-klassika"}, {"date": "16 июня, вторник", "date_short": "16 июня", "date_sort": "2026-06-16", "title": "Выставка «Сокровища Лиможа»", "category": "Выставка", "city": "Мстёра", "venue": "Мстёрский художественный музей", "address": "пл. Ленина, 3", "time": "10:00–17:00", "description": "Выставка лиможской эмали из частной коллекции Натальи Карпович. В период афиши доступна 16–20 июня.", "source": "https://vladimirculture.ru/events/87370/vystavka-sokrovisha-limozha"}, {"date": "16 июня, вторник", "date_short": "16 июня", "date_sort": "2026-06-16", "title": "Медиапрограмма «Народные промыслы Владимирской области»", "category": "Просветительская программа", "city": "Ковров", "venue": "Центральная городская библиотека имени С. К. Никитина", "address": "ул. Дегтярёва, 18", "time": "10:30–11:30", "description": "Библиотечная программа о традиционных промыслах Владимирской области.", "source": "https://vladimirculture.ru/events/87669/mediaprogramma-narodnye-promysly-vladimirskoi-oblasti"}, {"date": "17 июня, среда", "date_short": "17 июня", "date_sort": "2026-06-17", "title": "Спектакль «Сказка о потерянном времени»", "category": "Детская программа", "city": "Владимир", "venue": "Владимирский областной театр кукол", "address": "ул. Гагарина, 7", "time": "10:30–11:30", "description": "Постановка по сказке Евгения Шварца о времени, взрослении и ответственности.", "source": "https://vladimirculture.ru/events/5103/spektakl-skazka-o-poteryannom-vremeni"}, {"date": "18 июня, четверг", "date_short": "18 июня", "date_sort": "2026-06-18", "title": "Концерт «Купальская ночь»", "category": "Концерт", "city": "Владимир", "venue": "Концертный зал имени С. И. Танеева", "address": "проспект Ленина, 1", "time": "18:30–20:00", "description": "Концертная программа Владимирской филармонии на летнюю купальскую тему.", "source": "https://vladimirculture.ru/events/84134/koncert-kupalskaya-noch"}, {"date": "18 июня, четверг", "date_short": "18 июня", "date_sort": "2026-06-18", "title": "Выставка «Цветные сны»", "category": "Выставка", "city": "Владимир", "venue": "Галерея 4–6", "address": "ул. Большая Московская, 4–6", "time": "10:00–19:00", "description": "Выставка живописи Сергея Кремнёва о летнем Владимире; в экспозиции около 30 полотен.", "source": "https://vladimirculture.ru/events/87361/vystavka-cvetnye-sny"}, {"date": "18 июня, четверг", "date_short": "18 июня", "date_sort": "2026-06-18", "title": "Программа «Мы помним, мы гордимся!»", "category": "Детская программа", "city": "Ковров", "venue": "Модельная центральная детская библиотека имени С. К. Никитина", "address": "ул. Дегтярёва, 18", "time": "09:45–10:25, 10:40–11:20, 11:30–12:10", "description": "Программа для детей, приуроченная ко Дню памяти и скорби.", "source": "https://vladimirculture.ru/events/86771/programma-my-pomnim-my-gordimsya"}, {"date": "19 июня, пятница", "date_short": "19 июня", "date_sort": "2026-06-19", "title": "Фестиваль «ДжазМост»", "category": "Фестиваль", "city": "Владимир", "venue": "Концертный зал имени С. И. Танеева", "address": "проспект Ленина, 1", "time": "18:00–20:00", "description": "Первый день джазового фестиваля, который проходит во Владимире и Муроме.", "source": "https://vladimirculture.ru/events/62856/festival-dzhazmost"}, {"date": "19 июня, пятница", "date_short": "19 июня", "date_sort": "2026-06-19", "title": "Фестиваль духовной музыки «Голоса Суздаля»", "category": "Фестиваль", "city": "Суздаль", "venue": "Спасо-Евфимиев монастырь, Спасо-Преображенский собор", "address": "ул. Ленина, 148А", "time": "19:00", "description": "Концерт Ушаковского хора мальчиков и юношей Успенского храма в рамках фестиваля духовной музыки.", "source": "https://vladimirculture.ru/events/76125/mezhdunarodnyi-festival-dukhovnoi-muzyki-golosa-suzdalya"}, {"date": "19 июня, пятница", "date_short": "19 июня", "date_sort": "2026-06-19", "title": "«Разноцветный попугай»", "category": "Мастер-класс", "city": "Вязники", "venue": "Центр культурного развития", "address": "ул. Мичуринская, 66", "time": "11:00–13:00", "description": "Творческий мастер-класс для детей: участники делают яркую поделку-попугая и знакомятся с декоративно-прикладными техниками.", "source": "https://vladimirculture.ru/events/87912/raznocvetnyi-popugai"}, {"date": "20 июня, суббота", "date_short": "20 июня", "date_sort": "2026-06-20", "title": "Фестиваль «ДжазМост»", "category": "Фестиваль", "city": "Муром", "venue": "площадка на Владимирском шоссе", "address": "", "time": "18:00–20:00", "description": "Второй день фестиваля проходит в Муроме. В программе заявлены джазовые ансамбли и проекты российских и зарубежных музыкантов.", "source": "https://vladimirculture.ru/events/62856/festival-dzhazmost"}, {"date": "20 июня, суббота", "date_short": "20 июня", "date_sort": "2026-06-20", "title": "Фестиваль духовной музыки «Голоса Суздаля»", "category": "Фестиваль", "city": "Суздаль", "venue": "Спасо-Евфимиев монастырь, Спасо-Преображенский собор", "address": "ул. Ленина, 148А", "time": "19:00", "description": "Концерт мужского хора Воронежской филармонии в рамках фестиваля духовной музыки.", "source": "https://vladimirculture.ru/events/76125/mezhdunarodnyi-festival-dukhovnoi-muzyki-golosa-suzdalya"}, {"date": "20 июня, суббота", "date_short": "20 июня", "date_sort": "2026-06-20", "title": "Проект «Лето на Каменке. Суздаль»", "category": "Музыкально-литературная программа", "city": "Суздаль", "venue": "Главный туристический комплекс «Суздаль»", "address": "ул. Коровники, 45", "time": "17:00–19:00", "description": "Open-air программа на Каменке: поэтическая лаборатория «Серебряный век русской поэзии», Елена Фролова и Владимирский губернаторский симфонический оркестр.", "source": "https://vladimirculture.ru/events/74324/proekt-leto-na-kamenke-suzdal"}, {"date": "20 июня, суббота", "date_short": "20 июня", "date_sort": "2026-06-20", "title": "Фестиваль «Богатырская битва»", "category": "Спортивное событие", "city": "Владимир", "venue": "Соборная площадь", "address": "", "time": "11:00–15:00", "description": "Фестиваль отечественных видов спорта, силового экстрима, народных традиций и боевых искусств. Также в программе заявлены соревнования по кибатлетике.", "source": "https://xn--80aa2apehccmd.xn--p1ai/calendar/festival-narodnykh-traditsiy-otechestvennykh-vidov-sporta-i-boevykh-iskusstv-%D1%86bogatyrskaya-bitva/"}, {"date": "20 июня, суббота", "date_short": "20 июня", "date_sort": "2026-06-20", "title": "«Городские зарисовки»", "category": "Мастер-класс", "city": "Вязники", "venue": "Центр культурного развития", "address": "ул. Мичуринская, 66", "time": "10:00–12:00", "description": "Пленэр для тех, кто хочет попробовать городские зарисовки и поработать с композицией, цветом и настроением городского пейзажа.", "source": "https://vladimirculture.ru/events/87910/gorodskie-zarisovki"}, {"date": "20 июня, суббота", "date_short": "20 июня", "date_sort": "2026-06-20", "title": "Концерт «Для вас с любовью…»", "category": "Концерт", "city": "Ковров", "venue": "Дом культуры имени В. П. Ногина", "address": "ул. Абельмана, 75", "time": "16:00–17:40", "description": "Сольный концерт Ольги Егоровой, солистки народного вокального коллектива «Мелодия».", "source": "https://vladimirculture.ru/events/87489/dlya-vas-s-lyubovyu"}, {"date": "21 июня, воскресенье", "date_short": "21 июня", "date_sort": "2026-06-21", "title": "Фестиваль духовной музыки «Голоса Суздаля»: литургия", "category": "Фестиваль", "city": "Порецкое", "venue": "Преображенский храм", "address": "", "time": "08:00", "description": "Выступление мужского хора Воронежской филармонии в рамках фестивальной программы «Голоса Суздаля».", "source": "https://vladimirculture.ru/events/76125/mezhdunarodnyi-festival-dukhovnoi-muzyki-golosa-suzdalya"}, {"date": "21 июня, воскресенье", "date_short": "21 июня", "date_sort": "2026-06-21", "title": "Первенство Владимирской области по лёгкой атлетике", "category": "Спортивное событие", "city": "Владимир", "venue": "Спортивный комплекс «Торпедо»", "address": "", "time": "не указано", "description": "Региональные соревнования по лёгкой атлетике.", "source": "https://33-news.ru/news/bogatyrskaya-bitva-i-lyogkaya-atletika-novaya-sportivnaya-afisha-vladimirskoj-oblasti"}, {"date": "21 июня, воскресенье", "date_short": "21 июня", "date_sort": "2026-06-21", "title": "Чемпионат Владимирской области по пляжному волейболу", "category": "Спортивное событие", "city": "Гусь-Хрустальный", "venue": "городской пляж", "address": "", "time": "не указано", "description": "Областной чемпионат по пляжному волейболу.", "source": "https://33-news.ru/news/bogatyrskaya-bitva-i-lyogkaya-atletika-novaya-sportivnaya-afisha-vladimirskoj-oblasti"}];
+    const container = document.getElementById('eventsContainer');
+    const cards = Array.from(document.querySelectorAll('.event-card'));
+    const searchInput = document.getElementById('searchInput');
+    const sortSelect = document.getElementById('sortSelect');
+    const resetButton = document.getElementById('resetButton');
+    const visibleCount = document.getElementById('visibleCount');
+    const emptyState = document.getElementById('emptyState');
+
+    const filters = {
+      date: 'all',
+      city: 'all',
+      category: 'all',
+      search: ''
+    };
+
+    function normalize(text) {
+      return (text || '').toString().trim().toLowerCase();
+    }
+
+    function setActiveChip(type, value) {
+      document.querySelectorAll(`[data-filter-type="${type}"]`).forEach(button => {
+        button.classList.toggle('active', button.dataset.filterValue === value);
+      });
+    }
+
+    function sortCards(list) {
+      const mode = sortSelect.value;
+      return [...list].sort((a, b) => {
+        if (mode === 'city') {
+          return a.dataset.city.localeCompare(b.dataset.city, 'ru') || a.dataset.date.localeCompare(b.dataset.date, 'ru');
+        }
+        if (mode === 'category') {
+          return a.dataset.category.localeCompare(b.dataset.category, 'ru') || a.dataset.date.localeCompare(b.dataset.date, 'ru');
+        }
+        return a.dataset.date.localeCompare(b.dataset.date, 'ru');
+      });
+    }
+
+    function renderGroups(visibleCards) {
+      container.innerHTML = '';
+      const sorted = sortCards(visibleCards);
+      const groupByDate = sortSelect.value === 'date';
+
+      if (!groupByDate) {
+        const grid = document.createElement('div');
+        grid.className = 'event-grid';
+        sorted.forEach(card => grid.appendChild(card));
+        container.appendChild(grid);
+        return;
+      }
+
+      let currentDate = null;
+      let currentGroup = null;
+      let currentGrid = null;
+
+      sorted.forEach(card => {
+        const date = card.dataset.date;
+        if (date !== currentDate) {
+          currentDate = date;
+          currentGroup = document.createElement('section');
+          currentGroup.className = 'day-group';
+
+          const heading = document.createElement('h3');
+          heading.className = 'day-heading';
+          heading.textContent = date;
+
+          currentGrid = document.createElement('div');
+          currentGrid.className = 'event-grid';
+
+          currentGroup.appendChild(heading);
+          currentGroup.appendChild(currentGrid);
+          container.appendChild(currentGroup);
+        }
+        currentGrid.appendChild(card);
+      });
+    }
+
+    function applyFilters() {
+      const query = normalize(filters.search);
+      const visible = cards.filter(card => {
+        const matchesDate = filters.date === 'all' || card.dataset.date === filters.date;
+        const matchesCity = filters.city === 'all' || card.dataset.city === filters.city;
+        const matchesCategory = filters.category === 'all' || card.dataset.category === filters.category;
+        const matchesSearch = !query || card.dataset.search.includes(query);
+        return matchesDate && matchesCity && matchesCategory && matchesSearch;
+      });
+
+      visibleCount.textContent = visible.length;
+      emptyState.style.display = visible.length ? 'none' : 'block';
+      renderGroups(visible);
+    }
+
+    document.querySelectorAll('[data-filter-type]').forEach(button => {
+      button.addEventListener('click', () => {
+        const type = button.dataset.filterType;
+        const value = button.dataset.filterValue;
+        filters[type] = value;
+        setActiveChip(type, value);
+        applyFilters();
+      });
+    });
+
+    searchInput.addEventListener('input', () => {
+      filters.search = searchInput.value;
+      applyFilters();
+    });
+
+    sortSelect.addEventListener('change', applyFilters);
+
+    resetButton.addEventListener('click', () => {
+      filters.date = 'all';
+      filters.city = 'all';
+      filters.category = 'all';
+      filters.search = '';
+      searchInput.value = '';
+      setActiveChip('date', 'all');
+      setActiveChip('city', 'all');
+      setActiveChip('category', 'all');
+      sortSelect.value = 'date';
+      applyFilters();
+    });
+
+    applyFilters();
+  </script>
+</body>
+</html>
